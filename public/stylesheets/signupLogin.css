@@ -1,0 +1,14 @@
+*{
+    padding: 10px;
+}
+#owner-create-acc{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
