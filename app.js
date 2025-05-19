@@ -31,13 +31,13 @@ app.use(
 );
 app.use(flash());
 
-app.use("/owners", ownersRouter);
+app.use("/owner", ownersRouter);
 app.use("/users", usersRouter);
 app.use("/products", productsRouter);
 
 app.use("/", indexRouter); 
-app.use("/", signupLoginRouter); 
-app.use("/", shopRouter);
+app.use("/users", signupLoginRouter); 
+app.use("/users", shopRouter);
 
 
 // app.get("/", (req,res)=>{

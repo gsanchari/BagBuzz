@@ -6,12 +6,18 @@
     <title>shopping</title>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="stylesheets/shop.css">
+    <link rel="stylesheet" href="../stylesheets/shop.css">
 </head>
 <body>
     <div id="nav-bar">
         <h1>BagBuzz</h1>
-        <a href="/logout">LogOut</a>
+        <div id="cart-products">
+        <a href="/users/shop"><i class="ri-shopping-cart-2-fill" >Shop</i></a>
+        <a href="/users/cart"><i class="ri-shopping-cart-2-fill" >Cart</i></a>
+        <a href=""><i class="ri-shopping-cart-2-fill" >My Account</i></a>
+        
+        <a href="/users/logout">LogOut</a>
+        </div>
     </div>
     <div id="shopping">
     <div id="dash-board">
@@ -34,102 +40,28 @@
         </div>
     </div>
     <div id="product-show">
-        <div id="items-div">
-            <div id="items-img">
 
+        <% products.forEach(function(product){ %>
+
+            <div id="items-div">
+            <div id="items-img" style="background-color:<%= product.bgcolor || '#f0f0f0'%>">
+                <img src="data:image/jpeg;base64,<%= product.image.toString('base64')%>" alt="">
             </div>
-            <div id="items-details">
+            <div id="items-details" style="background-color: <%= product.panelcolor || '#ffffff' %>; color: <%= product.textcolor || '#000000' %>;">
                 <div id="items-price">
-                    <h4>Cling Bag</h4>
-                    <h4>1200 /-</h4>
+                    <h4><%= product.name%></h4>
+                    <h4>₹ <%= product.price%></h4>
                 </div>
                 <div id="add-to-cart">
-                    <i class="ri-add-circle-line"></i>
+                    <a href="/users/addtocart/<%=product._id%>"><i class="ri-add-circle-line"></i></a>
                 </div>
                 
                 
             </div>
         </div>
-        <div id="items-div">
-            <div id="items-img">
 
-            </div>
-            <div id="items-details">
-                <div id="items-price">
-                    <h4>Cling Bag</h4>
-                    <h4>1200 /-</h4>
-                </div>
-                <div id="add-to-cart">
-                    <i class="ri-add-circle-line"></i>
-                </div>
-                
-                
-            </div>
-        </div>
-        <div id="items-div">
-            <div id="items-img">
+        <% }) %>
 
-            </div>
-            <div id="items-details">
-                <div id="items-price">
-                    <h4>Cling Bag</h4>
-                    <h4>1200 /-</h4>
-                </div>
-                <div id="add-to-cart">
-                    <i class="ri-add-circle-line"></i>
-                </div>
-                
-                
-            </div>
-        </div>
-        <div id="items-div">
-            <div id="items-img">
-
-            </div>
-            <div id="items-details">
-                <div id="items-price">
-                    <h4>Cling Bag</h4>
-                    <h4>1200 /-</h4>
-                </div>
-                <div id="add-to-cart">
-                    <i class="ri-add-circle-line"></i>
-                </div>
-                
-                
-            </div>
-        </div>
-        <div id="items-div">
-            <div id="items-img">
-
-            </div>
-            <div id="items-details">
-                <div id="items-price">
-                    <h4>Cling Bag</h4>
-                    <h4>1200 /-</h4>
-                </div>
-                <div id="add-to-cart">
-                    <i class="ri-add-circle-line"></i>
-                </div>
-                
-                
-            </div>
-        </div>
-        <div id="items-div">
-            <div id="items-img">
-
-            </div>
-            <div id="items-details">
-                <div id="items-price">
-                    <h4>Cling Bag</h4>
-                    <h4>1200 /-</h4>
-                </div>
-                <div id="add-to-cart">
-                    <i class="ri-add-circle-line"></i>
-                </div>
-                
-                
-            </div>
-        </div>
     </div>
     </div>
 </body>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Cart</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="../stylesheets/cart.css">
+</head>
+<body>
+    <div id="nav-bar">
+        <h1>BagBuzz</h1>
+        <div id="cart-products">
+        <a href="/users/shop"><i class="ri-shopping-cart-2-fill" >Shop</i></a>
+        <a href="/users/cart"><i class="ri-shopping-cart-2-fill" >Cart</i></a>
+        <a href=""><i class="ri-shopping-cart-2-fill" >My Account</i></a>
+        </div>
+        <a href="/users/logout">LogOut</a>
+    </div>
+
+    <% cartItems.forEach(function(item){ %>
+    <div id="cart-container">
+        <div id="items-show">
+            <div id="items-img" style="background-color:<%= item.bgcolor || '#f0f0f0'%>">
+                <img src="data:image/jpeg;base64,<%= item.image.toString('base64')%>" alt="">
+            </div>
+        
+            <div id="cart-footer" style="background-color: <%= item.panelcolor || '#ffffff' %>; color: <%= item.textcolor || '#000000' %>;">
+                <div id="items-total">
+                    <div class="items-name"><%= item.name%></div>
+                    <div class="total-items">
+                        <a href="/users/decrement/<%= item._id %>" class="decrement">-</a>
+                        <span class="quantity"><%= item.quantity %></span>
+                        <a href="/users/increment/<%= item._id %>" class="increment">+</a>
+                    </div>
+                </div>
+                <div id="items-price">
+                    <div class="net-total">Net-Total</div>
+                    <div class="price">₹<%= item.finalCost %></div> <!-- ✅ fixed -->
+                </div>
+            </div>
+        </div>
+
+        <div id="price-breakdown">
+            <h3>Price Breakdown</h3>
+            <div class="row">
+                <span>Total MRP:</span>
+                <span>₹<%= item.price %></span>
+            </div>
+            <div class="row">
+                <span>Discount on MRP:</span>
+                <span>₹<%= Number(item.discount) %></span>
+            </div>
+            <div class="row">
+                <span>Platform Fee:</span>
+                <span>₹20</span>
+            </div>
+            <div class="row">
+                <span>Shipping Fee:</span>
+                <span>FREE</span>
+            </div>
+            <hr>
+            <div class="row total">
+                <span>Total Amount:</span>
+                <span>₹<%= item.finalCost %></span> <!-- ✅ fixed -->
+            </div>
+        </div>
+        <div id="delete-cart">
+            <a href="/users/deletefromcart/<%= item._id %>"><i class="ri-delete-bin-6-fill"></i></a>
+        </div>
+
+  </div>
+<% }) %>
+
+
+  
+</body>
+</html>

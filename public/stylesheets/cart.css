@@ -1,0 +1,89 @@
+/* General reset and layout */
+#nav-bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#cart-products {
+    height: 50px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+#cart-products i {
+    font-size: 20px; /* or any size you want */
+}
+
+#cart-container{
+    background-color: #f0f0f0;
+    /* width:100%; */
+    height: 300px;
+    /* border:2px black solid; */
+    border-radius: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 40px;
+
+}
+#items-show{
+    /* background-color: blue; */
+    width: 25%;
+    height: 330px;
+    display: flex;
+    flex-direction: column;
+}
+#price-breakdown{
+    width: 60%;
+    height: 300px;
+    /* background-color: aquamarine; */
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 20px;
+}
+
+#items-img{
+    background-color: rgb(121, 84, 39);
+    height: 75%;
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#items-img img {
+    height: 100%;
+    width: auto;
+    object-fit: contain; /* Ensures full image is shown without distortion */
+    display: block;
+}
+#cart-footer{
+    background-color: blueviolet;
+    height: 25%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+#items-total{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    height: 50%;
+}
+#items-price{
+     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    height: 50%;
+}

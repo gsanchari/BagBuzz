@@ -4,17 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Register</title>
-    <link rel="stylesheet" href="stylesheets/signupLogin.css">
+    <link rel="stylesheet" href="../stylesheets/signupLogin.css">
 </head>
 <body>
-    
-
     <center><h1>Login page</h1></center>
-    <div id="owner-create-acc">
+    <div id="user-create-acc">
         <div id="signup-acc">
             <h2>Welcome to BagBuzz</h2>
             <h4>create your account</h4>
-            <form action="/register" method="post">
+            <form action="/users/register" method="post">
                 <input type="text" id="fullname" placeholder="FullName" name="fullname">
                 <input type="email" id="email" placeholder="Email" name="email">
                 <input type="password" id="password" placeholder="Password" name="password">
@@ -29,7 +27,7 @@
         </div>
         <div id="login-acc">
             <h4>Login your account</h4>
-            <form action="/login" method="post">
+            <form action="/users/login" method="post">
                 <input type="email" id="" placeholder="Email" name="email">
                 <input type="password" id="" placeholder="Password" name="password">
                 <input type="submit" id="" value="Create My Account">

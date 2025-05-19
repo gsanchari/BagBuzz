@@ -4,9 +4,6 @@ const router = express.Router();
 const ownersRouter = require("../models/owner-model.js");
 const ownerModel = require("../models/owner-model.js");
 
-router.get("/", (req,res)=>{
-    res.send("hey it's working");
-})
 
 //console.log(process.env.NODE_ENV)
 if(process.env.NODE_ENV == "development"){
@@ -26,6 +23,11 @@ if(process.env.NODE_ENV == "development"){
         res.status(201).send(createdOwner);
     })
 }
+
+router.get("/admin", (req,res)=>{
+    let success = req.flash("success");
+    res.render("createProduct.ejs", {success});
+})
 
 
 

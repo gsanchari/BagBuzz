@@ -34,7 +34,8 @@ router.post("/register", async(req, res) => {
                     //let token = jwt.sign({email, id: user._id}, "hjiuytrewqasdfgh");
                     let token = generateToken(user);
                     res.cookie("token", token);
-                    res.send("user created successfully");
+                    //res.send("user created successfully");
+                    res.redirect("/users/shop");
 
                 }
             });
@@ -59,18 +60,18 @@ router.post("/login", async(req, res)=>{
             res.cookie("token", token);
             res.status(200);
             //res.send("You Login Successfully");
-            res.redirect("/shop");
+            res.redirect("/users/shop");
             
         }
         else{
-            res.redirect("/register");
+            res.redirect("/users/register");
         }
     })
 })
 
 router.get('/logout', (req,res)=>{
     res.cookie("token", "");
-    res.redirect("/register")
+    res.redirect("/users/register")
 })
 
 
