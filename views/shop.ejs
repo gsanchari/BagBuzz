@@ -5,64 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>shopping</title>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
-
     <link rel="stylesheet" href="../stylesheets/shop.css">
 </head>
 <body>
     <div id="nav-bar">
-        <h1>BagBuzz</h1>
+        <img src="/images/bag-images/logo.png" alt="">
         <div id="cart-products">
-        <a href="/users/shop"><i class="ri-shopping-cart-2-fill" >Shop</i></a>
-        <a href="/users/cart"><i class="ri-shopping-cart-2-fill" >Cart</i></a>
-        <a href=""><i class="ri-shopping-cart-2-fill" >My Account</i></a>
-        
-        <a href="/users/logout">LogOut</a>
+            <a href="/users/shop"><span><i class="ri-store-fill"></i>Shop</span></a>
+            <a href="/users/cart"><i class="ri-shopping-cart-2-fill">Cart</i></a>
+            <a href=""><i class="ri-user-3-fill"></i>My-Account</a>
+            <a href="/users/logout">LogOut</a>
         </div>
     </div>
+
     <div id="shopping">
-    <div id="dash-board">
-        <div class="sort-by">
-            Sort-by
-            <select name="gender" id="">
-                <option value="popular">Popular</option>
-                <option value="newest">Newest</option>
-            </select>
-        </div>
-        <div class="collection">
-            <h4>New Collection</h4>
-            <h4>All Products</h4>
-            <h4>Discounted Products</h4>
-        </div>
-        <div class="filter-collection">
-            Filter by:
-            <h4>Availability</h4>
-            <h4>Discount</h4>
-        </div>
-    </div>
-    <div id="product-show">
-
-        <% products.forEach(function(product){ %>
-
-            <div id="items-div">
-            <div id="items-img" style="background-color:<%= product.bgcolor || '#f0f0f0'%>">
-                <img src="data:image/jpeg;base64,<%= product.image.toString('base64')%>" alt="">
+        <div id="dash-board">
+            <div class="sort-by">
+                Sort-by
+                <select name="gender" id="">
+                    <option value="popular">Popular</option>
+                    <option value="newest">Newest</option>
+                </select>
             </div>
-            <div id="items-details" style="background-color: <%= product.panelcolor || '#ffffff' %>; color: <%= product.textcolor || '#000000' %>;">
-                <div id="items-price">
-                    <h4><%= product.name%></h4>
-                    <h4>₹ <%= product.price%></h4>
+
+            <div class="collection">
+                <h4>New Collection</h4>
+                <h4>All Products</h4>
+                <h4>Collection For:</h4>
+                <div class="gender">
+                    <a href="/users/shop?gender=woman">Woman Collection</a>
+                    <a href="/users/shop?gender=man">Man Collection</a>
                 </div>
-                <div id="add-to-cart">
-                    <a href="/users/addtocart/<%=product._id%>"><i class="ri-add-circle-line"></i></a>
-                </div>
-                
-                
+            </div>
+
+            <div class="filter-collection">
+                Filter by:
+                <h4>Availability</h4>
+                <h4>Discount</h4>
             </div>
         </div>
 
-        <% }) %>
-
-    </div>
+        <div id="product-show">
+            <% products.forEach(function(product){ %>
+                <div id="items-div">
+                    <div id="items-img" style="background-color:<%= product.bgcolor || '#f0f0f0'%>">
+                        <img src="data:image/jpeg;base64,<%= product.image.toString('base64')%>" alt="">
+                    </div>
+                    <div id="items-details" style="background-color: <%= product.panelcolor || '#ffffff' %>; color: <%= product.textcolor || '#000000' %>;">
+                        <div id="items-price">
+                            <h4><%= product.name %></h4>
+                            <h4>₹ <%= product.price %></h4>
+                        </div>
+                        <div id="add-to-cart">
+                            <a href="/users/addtocart/<%= product._id %>"><i class="ri-add-circle-line"></i></a>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
     </div>
 </body>
 </html>

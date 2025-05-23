@@ -9,13 +9,14 @@
 </head>
 <body>
     <div id="nav-bar">
-        <h1>BagBuzz</h1>
+        <img src="/images/bag-images/logo.png" alt="">
         <div id="cart-products">
-        <a href="/users/shop"><i class="ri-shopping-cart-2-fill" >Shop</i></a>
-        <a href="/users/cart"><i class="ri-shopping-cart-2-fill" >Cart</i></a>
-        <a href=""><i class="ri-shopping-cart-2-fill" >My Account</i></a>
+            <a href="/users/shop"><i class="ri-store-fill"></i>Shop</i></a>
+            <a href="/users/cart"><span><i class="ri-shopping-cart-2-fill">Cart</span></i></a>
+            <a href=""><i class="ri-user-3-fill"></i>My-Account</i></a>
+            <a href="/users/logout">LogOut</a>
         </div>
-        <a href="/users/logout">LogOut</a>
+        
     </div>
 
     <% cartItems.forEach(function(item){ %>
@@ -60,9 +61,9 @@
                 <span>FREE</span>
             </div>
             <hr>
-            <div class="row total">
+            <div class="row-total">
                 <span>Total Amount:</span>
-                <span>₹<%= item.finalCost %></span> <!-- ✅ fixed -->
+                <span >₹<%= item.finalCost %></span>
             </div>
         </div>
         <div id="delete-cart">

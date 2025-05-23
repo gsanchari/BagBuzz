@@ -1,22 +1,37 @@
-
+*{
+    font-family: monospace;
+}
 #nav-bar{
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+    /* padding-left: 10px; */
+    padding-right: 40px;
+}
+#nav-bar img{
+    height: 100px;
+    width: 250px;
 }
 
 #cart-products {
     height: 50px;
-    width: 200px;
+    /* width: 200px; */
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 15px;
+    gap: 25px;
 }
 
-#cart-products i {
-    font-size: 20px; /* or any size you want */
+#cart-products a{
+    text-decoration: none;
+    color: black;
+    font-size: 17px;
 }
+#cart-products a span{
+   color: rgb(20, 20, 133);
+   border-bottom: 3px rgb(20, 20, 133) solid;
+}
+
 #items-div{
     height: 350px;
     width: 300px;
@@ -60,31 +75,51 @@
 }
 #items-price{
     padding-left: 15px;
+    font-size: 1.2rem;
 }
 #add-to-cart{
-    padding-right: 15px;
+    padding-right: 25px;
+    font-size: 1.8rem;
+}
+#add-to-cart a{
+    text-decoration: none;
+    height: 27px;
+    width: 30px;
+    background-color: #f0f0f0;
+    display: inline-block; /* <-- Add this */
+    text-align: center;
+    color: black;
+    
+    
 }
 #shopping{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 100vh;
+    height: 100vh; 
+    margin-top: 20px;
     
 }
 #dash-board{
-    background-color: aqua;
+    background-color: #f0f0f0;
     height: 100%;
-    width: 20%;
-    padding: 10px;
+    width: 15%;
+    padding-top: 40px;
+    padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    font-size: 1.2rem;
+    box-shadow: 8px 0 8px -4px rgba(0, 0, 0, 0.6);
    
 }
 #product-show{
-    background-color: bisque;
+    /* background-color: bisque; */
     height: 100%;
     width: 80%;
     /* padding-left: 10px; */
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 4 items per row */
-    gap: 20px; /* space between items */
-    padding: 20px;
+    grid-template-columns: repeat(4, 1fr); /* 4 items per row */
+    gap: 10px; /* space between items */
+    
 }

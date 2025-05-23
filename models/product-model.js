@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 
-
-const productSchema = mongoose.Schema({
+const productSchema = new mongoose.Schema({
     image: Buffer,
     name: String,
     price: Number,
@@ -9,7 +8,10 @@ const productSchema = mongoose.Schema({
         type: Number,
         default: 0
     },
-    gender: String,
+    gender: {
+        type: String,
+        set: v => v.toLowerCase(), // Store gender in lowercase consistently
+    },
     bgcolor: String,
     panelcolor: String,
     textcolor: String
